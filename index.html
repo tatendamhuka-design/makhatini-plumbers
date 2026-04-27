@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Makhathini Plumbers - Reliable plumbing services in KwaMashu, Durban. 24/7 emergency, geyser repairs, bathroom installations, solar geysers, leak detection. Call 076 596 9429">
-  <title>Makhathini Plumbers | Premium Plumbing KwaMashu</title>
+  <meta name="description" content="Makhathini Plumbers - Reliable plumbing services in Amanzimtoti, Kingsburgh, Isipingo, Athlone Park and surrounding areas. 24/7 emergency, geyser repairs, bathroom installations.">
+  <title>Makhathini Plumbers | Premium Plumbing Amanzimtoti</title>
   <style>
     * {
       margin: 0;
@@ -638,17 +638,19 @@
       transform: translateY(-2px);
     }
 
+    /* AREAS WE SERVE - CONTINUOUS LEFT TO RIGHT MARQUEE ANIMATION */
     .areas-premium {
       background: linear-gradient(135deg, #F8FCFA 0%, #FFFFFF 100%);
       border-radius: 2rem;
-      padding: 2.5rem;
+      padding: 2rem;
       box-shadow: var(--shadow-sm);
       border: 1px solid rgba(42, 140, 140, 0.15);
+      overflow: hidden;
     }
 
     .areas-header {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     .areas-header h3 {
@@ -662,50 +664,88 @@
       font-size: 1rem;
     }
 
-    .areas-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+    /* MARQUEE / TICKER CONTAINER */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
     }
 
-    .area-card {
+    .marquee-track {
+      display: flex;
+      gap: 1.5rem;
+      animation: scrollLeft 25s linear infinite;
+      width: max-content;
+    }
+
+    /* Pause animation on hover */
+    .marquee-container:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Area Card Styling for Marquee */
+    .area-card-marquee {
       background: white;
-      padding: 1.2rem;
-      border-radius: 1.2rem;
+      padding: 1rem 1.8rem;
+      border-radius: 60px;
       text-align: center;
       transition: all 0.3s ease;
       border: 1px solid #e0ecea;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      white-space: nowrap;
     }
 
-    .area-card:hover {
-      transform: translateY(-5px);
+    .area-card-marquee:hover {
+      transform: scale(1.05);
       border-color: var(--teal);
       box-shadow: var(--shadow-md);
+      background: var(--teal);
     }
 
-    .area-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      display: inline-block;
+    .area-card-marquee:hover .area-icon-marquee,
+    .area-card-marquee:hover .area-name-marquee,
+    .area-card-marquee:hover .area-distance-marquee {
+      color: white;
     }
 
-    .area-card h4 {
-      font-size: 1.1rem;
+    .area-card-marquee:hover .area-distance-marquee {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .area-icon-marquee {
+      font-size: 1.3rem;
+    }
+
+    .area-name-marquee {
+      font-size: 1rem;
       font-weight: 600;
       color: var(--teal);
-      margin-bottom: 0.3rem;
     }
 
-    .area-card p {
-      font-size: 0.85rem;
+    .area-distance-marquee {
+      font-size: 0.75rem;
       color: #6b7c7c;
+      background: #eef4f2;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      margin-left: 0.3rem;
     }
 
     .areas-footer {
       text-align: center;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       padding-top: 1.5rem;
       border-top: 1px dashed #cde0dd;
     }
@@ -755,7 +795,6 @@
       text-decoration: underline;
     }
 
-    /* Copyright - Centered on both mobile and PC */
     .copyright {
       text-align: center;
       display: block;
@@ -764,7 +803,7 @@
       color: #8FA7A7;
     }
 
-    /* FLOATING WHATSAPP BUTTON - OFFICIAL WHATSAPP ICON */
+    /* FLOATING WHATSAPP BUTTON */
     .float-wa {
       position: fixed;
       bottom: 28px;
@@ -789,7 +828,6 @@
       animation: none;
     }
 
-    /* Official WhatsApp SVG Icon */
     .wa-svg-icon {
       width: 36px;
       height: 36px;
@@ -870,87 +908,27 @@
       font-size: 0.9rem;
     }
 
-    /* MOBILE RESPONSIVE */
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      
-      .burger-menu {
-        display: block;
-        position: absolute;
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      
-      .nav-container {
-        justify-content: center;
-      }
-      
-      .logo {
-        text-align: center;
-      }
-      
-      .hero h2 {
-        font-size: 2.2rem;
-      }
-      
-      .hero p {
-        font-size: 1rem;
-      }
-      
-      .section-title {
-        font-size: 1.8rem;
-      }
-      
-      .horizontal-stats {
-        flex-direction: column;
-      }
-      
-      .about-wrapper {
-        flex-direction: column;
-      }
-      
-      .contact-row {
-        flex-direction: column;
-      }
-      
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .portfolio-image {
-        height: 220px;
-      }
-      
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .btn-group {
-        justify-content: center;
-      }
-      
-      .hero-content {
-        text-align: center;
-      }
-      
-      .areas-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      }
-      
-      .float-wa {
-        width: 56px;
-        height: 56px;
-        bottom: 20px;
-        right: 20px;
-      }
-      
-      .wa-svg-icon {
-        width: 30px;
-        height: 30px;
-      }
+      .nav-links { display: none; }
+      .burger-menu { display: block; position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); }
+      .nav-container { justify-content: center; }
+      .logo { text-align: center; }
+      .hero h2 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .section-title { font-size: 1.8rem; }
+      .horizontal-stats { flex-direction: column; }
+      .about-wrapper { flex-direction: column; }
+      .contact-row { flex-direction: column; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-image { height: 220px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .btn-group { justify-content: center; }
+      .hero-content { text-align: center; }
+      .float-wa { width: 56px; height: 56px; bottom: 20px; right: 20px; }
+      .wa-svg-icon { width: 30px; height: 30px; }
+      .area-card-marquee { padding: 0.6rem 1.2rem; }
+      .area-name-marquee { font-size: 0.85rem; }
+      .marquee-track { gap: 1rem; }
     }
 
     .active-nav {
@@ -972,8 +950,6 @@
         <h1>Makhathini Plumbers</h1>
         <span>Pty Ltd | Est. 2012</span>
       </div>
-      
-      <!-- Desktop Navigation -->
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -984,16 +960,12 @@
           <span>📱</span> WhatsApp Now
         </a>
       </div>
-      
-      <!-- Burger Menu Button (Mobile Only) -->
       <button class="burger-menu" id="burgerBtn" aria-label="Menu">
         <span class="burger-line"></span>
         <span class="burger-line"></span>
         <span class="burger-line"></span>
       </button>
     </div>
-    
-    <!-- Mobile Navigation Menu -->
     <div class="mobile-nav" id="mobileNav">
       <a href="#home" class="mobile-nav-link">Home</a>
       <a href="#about" class="mobile-nav-link">About</a>
@@ -1009,7 +981,7 @@
     <section id="home" class="hero">
       <div class="container hero-content">
         <h2>Reliable Plumbing Services You Can Trust</h2>
-        <p>Specialists in Domestic & Industrial Plumbing in KwaMashu and surrounding areas</p>
+        <p>Specialists in Domestic & Industrial Plumbing in Amanzimtoti and surrounding areas</p>
         <div class="btn-group">
           <a href="#contact" class="btn-primary">📋 Get a Quote</a>
           <a href="https://wa.me/2765969429?text=Hello%20Makhathini%20Plumbers,%20I%20need%20a%20quote" target="_blank" class="btn-whatsapp-hero">
@@ -1025,7 +997,7 @@
         <div class="about-wrapper">
           <div class="about-text">
             <h3>Your Local Plumbing Experts Since 2012</h3>
-            <p>Makhathini Plumbers (Pty) Ltd is a family-owned business that has been serving KwaMashu and greater Durban area with integrity and excellence. We combine decades of hands-on experience with modern equipment to solve complex plumbing challenges — from burst geysers to new bathroom installations. Our certified team prioritises safety, transparency, and long-lasting results.</p>
+            <p>Makhathini Plumbers (Pty) Ltd is a family-owned business that has been serving Amanzimtoti and greater Durban South area with integrity and excellence. We combine decades of hands-on experience with modern equipment to solve complex plumbing challenges — from burst geysers to new bathroom installations. Our certified team prioritises safety, transparency, and long-lasting results.</p>
             <p style="margin-top: 1rem;">We treat every home and business like our own, ensuring minimal disruption and maximum quality. Whether it's an emergency call-out or large-scale industrial project, we deliver on time and within budget.</p>
             <div class="trust-badges" style="margin-top:1.5rem; justify-content:flex-start;">
               <span class="badge">✅ PIRB Registered</span>
@@ -1066,48 +1038,12 @@
       <div class="container">
         <div class="section-title"><span>Our Recent Projects</span></div>
         <div class="portfolio-grid">
-          <div class="portfolio-card">
-            <div class="portfolio-image" style="background-image: url('images/bathroom.jpeg');"></div>
-            <div class="portfolio-description">
-              <h4>🚿 Bathroom Renovation</h4>
-              <p>Complete bathroom transformation from outdated to modern luxury. New tiles, modern fixtures, and efficient plumbing layout.</p>
-            </div>
-          </div>
-          <div class="portfolio-card">
-            <div class="portfolio-image" style="background-image: url('images/toilet.jpeg');"></div>
-            <div class="portfolio-description">
-              <h4>🚽 Toilet Installation</h4>
-              <p>Professional toilet installation with water-efficient modern unit. Includes new pan, cistern, and waste pipe connection.</p>
-            </div>
-          </div>
-          <div class="portfolio-card">
-            <div class="portfolio-image" style="background-image: url('images/geyser.jpeg');"></div>
-            <div class="portfolio-description">
-              <h4>⚡ Geyser Installation</h4>
-              <p>New energy-efficient geyser installation with safety valves and proper piping. Reliable hot water guaranteed.</p>
-            </div>
-          </div>
-          <div class="portfolio-card">
-            <div class="portfolio-image" style="background-image: url('images/pipes.jpeg');"></div>
-            <div class="portfolio-description">
-              <h4>🔧 Sink & Water Pipes Replacement</h4>
-              <p>Complete replacement of corroded pipes under kitchen sink. Upgraded to durable copper piping. Eliminated leaks and improved water pressure.</p>
-            </div>
-          </div>
-          <div class="portfolio-card">
-            <div class="portfolio-image" style="background-image: url('images/jojo.jpeg');"></div>
-            <div class="portfolio-description">
-              <h4>💧 JoJo Tank Installation</h4>
-              <p>Complete rainwater harvesting system. 2500L JoJo tank with pressure pump and overflow management for water-saving and backup supply.</p>
-            </div>
-          </div>
-          <div class="portfolio-card">
-            <div class="portfolio-image" style="background-image: url('images/piping.jpg');"></div>
-            <div class="portfolio-description">
-              <h4>🏭 Piping & Drainage System</h4>
-              <p>Professional piping installation for industrial kitchen. High-quality PVC and copper pipes with proper fall gradients and durable connections.</p>
-            </div>
-          </div>
+          <div class="portfolio-card"><div class="portfolio-image" style="background-image: url('images/bathroom.jpeg');"></div><div class="portfolio-description"><h4>🚿 Bathroom Renovation</h4><p>Complete bathroom transformation from outdated to modern luxury.</p></div></div>
+          <div class="portfolio-card"><div class="portfolio-image" style="background-image: url('images/toilet.jpeg');"></div><div class="portfolio-description"><h4>🚽 Toilet Installation</h4><p>Professional toilet installation with water-efficient modern unit.</p></div></div>
+          <div class="portfolio-card"><div class="portfolio-image" style="background-image: url('images/geyser.jpeg');"></div><div class="portfolio-description"><h4>⚡ Geyser Installation</h4><p>New energy-efficient geyser installation with safety valves.</p></div></div>
+          <div class="portfolio-card"><div class="portfolio-image" style="background-image: url('images/pipes.jpeg');"></div><div class="portfolio-description"><h4>🔧 Sink & Water Pipes Replacement</h4><p>Complete replacement of corroded pipes under kitchen sink.</p></div></div>
+          <div class="portfolio-card"><div class="portfolio-image" style="background-image: url('images/jojo.jpeg');"></div><div class="portfolio-description"><h4>💧 JoJo Tank Installation</h4><p>Complete rainwater harvesting system with pressure pump.</p></div></div>
+          <div class="portfolio-card"><div class="portfolio-image" style="background-image: url('images/piping.jpg');"></div><div class="portfolio-description"><h4>🏭 Piping & Drainage System</h4><p>Professional piping installation for industrial kitchen.</p></div></div>
         </div>
       </div>
     </section>
@@ -1116,7 +1052,7 @@
       <div class="container">
         <div class="section-title"><span>Why Choose Us</span></div>
         <div class="features-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:2rem; text-align:center;">
-          <div class="feature-item" style="background:#F9FCFC; padding:2rem; border-radius:2rem;"><span style="font-size:2.6rem;">⚡🚀</span><h4>Fast Response</h4><p>Same-day service in KwaMashu & surrounds.</p></div>
+          <div class="feature-item" style="background:#F9FCFC; padding:2rem; border-radius:2rem;"><span style="font-size:2.6rem;">⚡🚀</span><h4>Fast Response</h4><p>Same-day service in Amanzimtoti & surrounds.</p></div>
           <div class="feature-item" style="background:#F9FCFC; padding:2rem; border-radius:2rem;"><span style="font-size:2.6rem;">💰✅</span><h4>Affordable Pricing</h4><p>Transparent quotes, no hidden fees.</p></div>
           <div class="feature-item" style="background:#F9FCFC; padding:2rem; border-radius:2rem;"><span style="font-size:2.6rem;">👔🔧</span><h4>Professional Service</h4><p>Certified plumbers, modern tools.</p></div>
           <div class="feature-item" style="background:#F9FCFC; padding:2rem; border-radius:2rem;"><span style="font-size:2.6rem;">🏆🛡️</span><h4>Certified & Trusted</h4><p>Fully licensed & insured.</p></div>
@@ -1135,26 +1071,48 @@
       </div>
     </section>
 
+    <!-- AREAS WE SERVE - CONTINUOUS LEFT TO RIGHT MARQUEE ANIMATION -->
     <section class="section" style="padding: 2rem 0 4rem 0;">
       <div class="container">
         <div class="section-title"><span>Areas We Serve</span></div>
         <div class="areas-premium">
           <div class="areas-header">
-            <h3>📍 Covering Durban & Surrounds</h3>
-            <p>Fast, reliable plumbing services across the greater eThekwini region</p>
+            <h3>📍 Covering Amanzimtoti & Surrounds</h3>
+            <p>Fast, reliable plumbing services across the greater Amanzimtoti region</p>
           </div>
-          <div class="areas-grid">
-            <div class="area-card"><div class="area-icon">🏠</div><h4>KwaMashu</h4><p>Main hub & headquarters</p></div>
-            <div class="area-card"><div class="area-icon">🌳</div><h4>Phoenix</h4><p>Full residential coverage</p></div>
-            <div class="area-card"><div class="area-icon">🏭</div><h4>Umlazi</h4><p>Industrial & domestic</p></div>
-            <div class="area-card"><div class="area-icon">🏖️</div><h4>Durban North</h4><p>Premium home services</p></div>
-            <div class="area-card"><div class="area-icon">🏘️</div><h4>Ntuzuma</h4><p>Same-day response</p></div>
-            <div class="area-card"><div class="area-icon">🏗️</div><h4>Springfield Park</h4><p>Commercial plumbing</p></div>
-            <div class="area-card"><div class="area-icon">🌊</div><h4>Umhlanga</h4><p>Elite residential</p></div>
-            <div class="area-card"><div class="area-icon">🏞️</div><h4>Pinetown</h4><p>Full coverage area</p></div>
-            <div class="area-card"><div class="area-icon">🚗</div><h4>Chatsworth</h4><p>Rapid response</p></div>
-            <div class="area-card"><div class="area-icon">🏥</div><h4>Mount Edgecombe</h4><p>Premium estates</p></div>
+          
+          <!-- MARQUEE ANIMATION - CONTINUOUS LEFT TO RIGHT -->
+          <div class="marquee-container">
+            <div class="marquee-track">
+              <!-- First set of areas -->
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏖️</span><span class="area-name-marquee">Amanzimtoti</span><span class="area-distance-marquee">0 km</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏄</span><span class="area-name-marquee">Kingsburgh</span><span class="area-distance-marquee">~5 km N</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🌊</span><span class="area-name-marquee">Warner Beach</span><span class="area-distance-marquee">~3 km N</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏠</span><span class="area-name-marquee">Doonside</span><span class="area-distance-marquee">~4 km N</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏖️</span><span class="area-name-marquee">Illovo Beach</span><span class="area-distance-marquee">~6 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🌴</span><span class="area-name-marquee">Karridene</span><span class="area-distance-marquee">~8 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏝️</span><span class="area-name-marquee">Umgababa</span><span class="area-distance-marquee">~10 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏄</span><span class="area-name-marquee">Winklespruit</span><span class="area-distance-marquee">~7 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">⛪</span><span class="area-name-marquee">St Winifred's</span><span class="area-distance-marquee">~9 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏘️</span><span class="area-name-marquee">Ezembeni</span><span class="area-distance-marquee">~12 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏭</span><span class="area-name-marquee">Isipingo</span><span class="area-distance-marquee">~15 km N</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏡</span><span class="area-name-marquee">Athlone Park</span><span class="area-distance-marquee">~2 km N</span></div>
+              <!-- Duplicate set for seamless loop -->
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏖️</span><span class="area-name-marquee">Amanzimtoti</span><span class="area-distance-marquee">0 km</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏄</span><span class="area-name-marquee">Kingsburgh</span><span class="area-distance-marquee">~5 km N</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🌊</span><span class="area-name-marquee">Warner Beach</span><span class="area-distance-marquee">~3 km N</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏠</span><span class="area-name-marquee">Doonside</span><span class="area-distance-marquee">~4 km N</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏖️</span><span class="area-name-marquee">Illovo Beach</span><span class="area-distance-marquee">~6 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🌴</span><span class="area-name-marquee">Karridene</span><span class="area-distance-marquee">~8 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏝️</span><span class="area-name-marquee">Umgababa</span><span class="area-distance-marquee">~10 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏄</span><span class="area-name-marquee">Winklespruit</span><span class="area-distance-marquee">~7 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">⛪</span><span class="area-name-marquee">St Winifred's</span><span class="area-distance-marquee">~9 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏘️</span><span class="area-name-marquee">Ezembeni</span><span class="area-distance-marquee">~12 km S</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏭</span><span class="area-name-marquee">Isipingo</span><span class="area-distance-marquee">~15 km N</span></div>
+              <div class="area-card-marquee"><span class="area-icon-marquee">🏡</span><span class="area-name-marquee">Athlone Park</span><span class="area-distance-marquee">~2 km N</span></div>
+            </div>
           </div>
+          
           <div class="areas-footer"><span>➕ Surrounding areas within 25km radius — just ask!</span></div>
         </div>
       </div>
@@ -1189,13 +1147,12 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div><h3>Makhathini Plumbers (Pty) Ltd</h3><p>Quality plumbing solutions since 2012</p></div>
-      <div><p>📞 076 596 9429</p><p>✉️ makhathiniplumbing@gmail.com</p><p>📍 KwaMashu, Durban</p></div>
+      <div><p>📞 076 596 9429</p><p>✉️ makhathiniplumbing@gmail.com</p><p>📍 Amanzimtoti, Durban South</p></div>
     </div>
     <div class="designer-credit">Designed by <a href="https://inkspiredigitaldesigns.co.za" target="_blank">Inkspire Digital Designs</a></div>
     <div class="copyright">© 2026 Makhathini Plumbers (Pty) Ltd — All rights reserved.</div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON WITH OFFICIAL SVG ICON -->
   <a href="https://wa.me/2765969429?text=Hello%20Makhathini%20Plumbers,%20I%20need%20a%20quote" class="float-wa" target="_blank" rel="noopener noreferrer">
     <svg class="wa-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 2C6.48 2 2 6.48 2 12C2 14.13 2.74 16.08 3.95 17.62L2 22L6.45 20.05C7.99 21.26 9.94 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="white"/>
@@ -1208,7 +1165,6 @@
   <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
   <script>
-    // Burger Menu Functionality
     const burgerBtn = document.getElementById('burgerBtn');
     const mobileNav = document.getElementById('mobileNav');
     const mobileOverlay = document.getElementById('mobileOverlay');
@@ -1237,12 +1193,8 @@
     });
 
     mobileOverlay.addEventListener('click', closeMobileMenu);
-    
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
-    });
+    mobileNavLinks.forEach(link => { link.addEventListener('click', closeMobileMenu); });
 
-    // Contact Form
     const form = document.getElementById('demoForm');
     if (form) {
       form.addEventListener('submit', function(e) {
@@ -1255,7 +1207,6 @@
       });
     }
 
-    // Active Nav Highlight
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .mobile-nav-link');
     function updateActiveLink() {
