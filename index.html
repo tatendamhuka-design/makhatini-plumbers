@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Makhathini Plumbers - Reliable plumbing services in KwaMashu, Durban. 24/7 emergency, geyser repairs, bathroom installations, solar geysers, leak detection. Call 076 596 9429">
+  <title>Makhathini Plumbers | Premium Plumbing KwaMashu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      background-color: #FFFFFF;
+      color: #1A1A1A;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --teal: #2A8C8C;
+      --light-teal: #A7D3D3;
+      --bg-white: #FFFFFF;
+      --text-dark: #1A1A1A;
+      --whatsapp-green: #25D366;
+      --whatsapp-dark: #20b859;
+      --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+      --radius-card: 1.25rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid #eef2f2;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+      position: relative;
+    }
+
+    .logo h1 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #1F6E6E 0%, #2A8C8C 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #2A8C8C;
+      display: block;
+    }
+
+    /* Desktop Navigation */
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e3e;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .btn-whatsapp-nav {
+      background-color: var(--whatsapp-green);
+      color: white !important;
+      padding: 0.55rem 1.3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s;
+      box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-whatsapp-nav:hover {
+      background-color: var(--whatsapp-dark);
+      transform: scale(1.02);
+    }
+
+    /* Mobile Navigation - Burger Menu */
+    .burger-menu {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      width: 35px;
+      height: 35px;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .burger-line {
+      width: 100%;
+      height: 3px;
+      background-color: var(--teal);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 0;
+    }
+
+    .burger-line:nth-child(1) { top: 6px; }
+    .burger-line:nth-child(2) { top: 16px; }
+    .burger-line:nth-child(3) { top: 26px; }
+
+    .burger-menu.active .burger-line:nth-child(1) {
+      transform: rotate(45deg);
+      top: 16px;
+    }
+    .burger-menu.active .burger-line:nth-child(2) {
+      opacity: 0;
+    }
+    .burger-menu.active .burger-line:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 16px;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background: white;
+      box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      padding: 100px 2rem 2rem;
+      transition: right 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #2c3e3e;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eef2f0;
+      transition: color 0.2s;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--teal);
+    }
+
+    .mobile-nav .btn-whatsapp-mobile {
+      background-color: var(--whatsapp-green);
+      color: white !important;
+      padding: 0.8rem 1.3rem;
+      border-radius: 50px;
+      text-align: center;
+      margin-top: 1rem;
+      border-bottom: none;
+    }
+
+    .mobile-nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .hero {
+      background: linear-gradient(107deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.4) 100%), url('images/hero-plumbing-bg.jpg') center/cover no-repeat;
+      background-size: cover;
+      background-position: center 35%;
+      padding: 5rem 0 6rem;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--teal);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 6px 14px rgba(42, 140, 140, 0.3);
+      transition: 0.25s;
+    }
+
+    .btn-primary:hover {
+      background-color: #236f6f;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+    }
+
+    .btn-outline-light:hover {
+      background: white;
+      color: var(--teal);
+    }
+
+    .btn-whatsapp-hero {
+      background-color: var(--whatsapp-green);
+      border: none;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+    }
+
+    .btn-whatsapp-hero:hover {
+      background-color: var(--whatsapp-dark);
+      transform: translateY(-2px);
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #1A1A1A;
+    }
+
+    .section-title span {
+      color: var(--teal);
+      border-bottom: 3px solid var(--light-teal);
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-card);
+      padding: 1.8rem 1.3rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #eef2f0;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--light-teal);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--teal);
+    }
+
+    .price-indicator {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--teal);
+      font-weight: 600;
+      background: #e6f4f4;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+    }
+
+    .about-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      align-items: center;
+      background: #F6FBF9;
+      border-radius: 2rem;
+      padding: 2rem;
+    }
+
+    .about-text {
+      flex: 1.2;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .about-image-right {
+      flex: 0.8;
+      min-width: 200px;
+    }
+
+    .about-image-right img {
+      width: 100%;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .horizontal-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card-horizontal {
+      flex: 1;
+      background: white;
+      padding: 1.2rem;
+      border-radius: 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s;
+    }
+
+    .stat-card-horizontal:hover {
+      transform: translateY(-4px);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-card {
+      background: white;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      border: 1px solid #eef2f0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: 280px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .portfolio-description {
+      padding: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .portfolio-description h4 {
+      font-size: 1.2rem;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .portfolio-description p {
+      color: #4a5562;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: #F6FBF9;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      color: var(--teal);
+      position: relative;
+      display: inline-block;
+    }
+
+    .contact-info h3:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--teal);
+      border-radius: 3px;
+    }
+
+    .contact-detail {
+      margin: 1.2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      padding: 0.9rem 1.2rem;
+      border-radius: 1rem;
+      transition: all 0.25s ease;
+      border: 1px solid #eef2f0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-detail:hover {
+      transform: translateX(5px);
+      border-color: var(--teal);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      background: #eef4f2;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.9rem;
+      color: var(--teal);
+    }
+
+    .contact-text {
+      flex: 1;
+    }
+
+    .contact-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: #8ba0a0;
+    }
+
+    .contact-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1A1A1A;
+      text-decoration: none;
+    }
+
+    .contact-value a {
+      text-decoration: none;
+      color: #1A1A1A;
+      transition: color 0.2s;
+    }
+
+    .contact-value a:hover {
+      color: var(--teal);
+    }
+
+    .whatsapp-premium-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: linear-gradient(135deg, #25D366 0%, #20b359 100%);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 0.8rem;
+      transition: all 0.25s;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-premium-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .contact-form {
+      flex: 1;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid #dce8e5;
+      border-radius: 1rem;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(42, 140, 140, 0.2);
+    }
+
+    .btn-submit {
+      background: var(--teal);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 3rem;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: #236f6f;
+      transform: translateY(-2px);
+    }
+
+    .areas-premium {
+      background: linear-gradient(135deg, #F8FCFA 0%, #FFFFFF 100%);
+      border-radius: 2rem;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(42, 140, 140, 0.15);
+    }
+
+    .areas-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .areas-header h3 {
+      font-size: 1.8rem;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .areas-header p {
+      color: #5a6e6e;
+      font-size: 1rem;
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .area-card {
+      background: white;
+      padding: 1.2rem;
+      border-radius: 1.2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid #e0ecea;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .area-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--teal);
+      box-shadow: var(--shadow-md);
+    }
+
+    .area-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .area-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: 0.3rem;
+    }
+
+    .area-card p {
+      font-size: 0.85rem;
+      color: #6b7c7c;
+    }
+
+    .areas-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #cde0dd;
+    }
+
+    .areas-footer span {
+      background: #eef4f2;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: var(--teal);
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .footer {
+      background: #11181c;
+      color: #C9D9D9;
+      padding: 2.5rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .designer-credit {
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(201, 217, 217, 0.2);
+      font-size: 0.85rem;
+      color: #8FA7A7;
+    }
+
+    .designer-credit a {
+      color: #A7D3D3;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .designer-credit a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Copyright - Centered on both mobile and PC */
+    .copyright {
+      text-align: center;
+      display: block;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #8FA7A7;
+    }
+
+    /* FLOATING WHATSAPP BUTTON - OFFICIAL WHATSAPP ICON */
+    .float-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background-color: var(--whatsapp-green);
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+      z-index: 1000;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      animation: pulse-whatsapp 1.8s infinite;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.08);
+      background-color: var(--whatsapp-dark);
+      animation: none;
+    }
+
+    /* Official WhatsApp SVG Icon */
+    .wa-svg-icon {
+      width: 36px;
+      height: 36px;
+      display: block;
+    }
+
+    @keyframes pulse-whatsapp {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); transform: scale(1); }
+      50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0.3); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); transform: scale(1); }
+    }
+
+    .float-wa::after {
+      content: "WhatsApp";
+      position: absolute;
+      right: 72px;
+      background: #1f2a2a;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+      font-family: system-ui, sans-serif;
+    }
+
+    .float-wa:hover::after {
+      opacity: 1;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 110px;
+      right: 28px;
+      background: #2A8C8C;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+      z-index: 99;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
+      font-size: 1.2rem;
+    }
+
+    .back-to-top:hover {
+      background: #1f6e6e;
+      transform: translateY(-2px);
+    }
+
+    .promo-banner {
+      background: #A7D3D3;
+      text-align: center;
+      padding: 0.6rem;
+      font-weight: 600;
+      color: #1A1A1A;
+    }
+
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+
+    .badge {
+      background: #eef2f0;
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .burger-menu {
+        display: block;
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      .nav-container {
+        justify-content: center;
+      }
+      
+      .logo {
+        text-align: center;
+      }
+      
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .horizontal-stats {
+        flex-direction: column;
+      }
+      
+      .about-wrapper {
+        flex-direction: column;
+      }
+      
+      .contact-row {
+        flex-direction: column;
+      }
+      
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .portfolio-image {
+        height: 220px;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .btn-group {
+        justify-content: center;
+      }
+      
+      .hero-content {
+        text-align: center;
+      }
+      
+      .areas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+      
+      .float-wa {
+        width: 56px;
+        height: 56px;
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .wa-svg-icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .active-nav {
+      color: #2A8C8C !important;
+      font-weight: 700;
+      border-bottom: 2px solid #2A8C8C;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="promo-banner">
+    🎉 WINTER SPECIAL: 15% off geyser repairs & solar installations! Mention this ad. 🎉
+  </div>
+
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">
+        <h1>Makhathini Plumbers</h1>
+        <span>Pty Ltd | Est. 2012</span>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#our-work">Our Work</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/2765969429?text=Hello%20Makhathini%20Plumbers,%20I%20need%20a%20quote" target="_blank" class="btn-whatsapp-nav">
+          <span>📱</span> WhatsApp Now
+        </a>
+      </div>
+      
+      <!-- Burger Menu Button (Mobile Only) -->
+      <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#our-work" class="mobile-nav-link">Our Work</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="https://wa.me/2765969429?text=Hello%20Makhathini%20Plumbers,%20I%20need%20a%20quote" target="_blank" class="btn-whatsapp-mobile">📱 WhatsApp Now</a>
+    </div>
+    <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <h2>Reliable Plumbing Services You Can Trust</h2>
+        <p>Specialists in Domestic & Industrial Plumbing in KwaMashu and surrounding areas</p>
+        <div class="btn-group">
+          <a href="#contact" class="btn-primary">📋 Get a Quote</a>
+          <a href="https://wa.me/2765969429?text=Hello%20Makhathini%20Plumbers,%20I%20need%20a%20quote" target="_blank" class="btn-whatsapp-hero">
+             WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-title"><span>About Makhathini Plumbers</span></div>
+        <div class="about-wrapper">
+          <div class="about-text">
+            <h3>Your Local Plumbing Experts Since 2012</h3>
+            <p>Makhathini Plumbers (Pty) Ltd is a family-owned business that has been serving KwaMashu and greater Durban area with integrity and excellence. We combine decades of hands-on experience with modern equipment to solve complex plumbing challenges — from burst geysers to new bathroom installations. Our certified team prioritises safety, transparency, and long-lasting results.</p>
+            <p style="margin-top: 1rem;">We treat every home and business like our own, ensuring minimal disruption and maximum quality. Whether it's an emergency call-out or large-scale industrial project, we deliver on time and within budget.</p>
+            <div class="trust-badges" style="margin-top:1.5rem; justify-content:flex-start;">
+              <span class="badge">✅ PIRB Registered</span>
+              <span class="badge">✅ COC Certified</span>
+              <span class="badge">✅ Fully Insured</span>
+              <span class="badge">✅ 10+ Years Exp</span>
+            </div>
+          </div>
+          <div class="about-image-right">
+            <img src="images/about-team.jpg" alt="Makhathini Plumbers team">
+          </div>
+        </div>
+        <div class="horizontal-stats">
+          <div class="stat-card-horizontal"><div class="stat-number">1,200+</div><p>Projects Completed</p></div>
+          <div class="stat-card-horizontal"><div class="stat-number">98%</div><p>Customer Satisfaction</p></div>
+          <div class="stat-card-horizontal"><div class="stat-number">24/7</div><p>Emergency Support</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-title"><span>Our Professional Services</span></div>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon">🚿🛁</div><h3>New Bathrooms</h3><p>Complete renovation, modern finishes</p><div class="price-indicator">From R9,500</div></div>
+          <div class="service-card"><div class="service-icon">⚡💧</div><h3>Geyser Installation</h3><p>Energy-efficient & safety guaranteed</p><div class="price-indicator">From R2,200</div></div>
+          <div class="service-card"><div class="service-icon">🔧🛠️</div><h3>Geyser Repair</h3><p>Fast diagnostics, burst or leaking</p><div class="price-indicator">From R450</div></div>
+          <div class="service-card"><div class="service-icon">🚰🌀</div><h3>Blocked Drains</h3><p>High-pressure jetting, fast clearing</p><div class="price-indicator">From R550</div></div>
+          <div class="service-card"><div class="service-icon">🔩🧰</div><h3>Plumbing Maintenance</h3><p>Routine inspections & leak fixes</p><div class="price-indicator">From R650</div></div>
+          <div class="service-card"><div class="service-icon">🔍💧</div><h3>Leak Detection</h3><p>Thermal imaging, hidden leaks</p><div class="price-indicator">From R750</div></div>
+          <div class="service-card"><div class="service-icon">🚨💦</div><h3>Burst Pipe Emergency</h3><p>24/7 rapid response</p><div class="price-indicator">Call for quote</div></div>
+          <div class="service-card"><div class="service-icon">☀️🫙</div><h3>Solar Geysers</h3><p>Eco-friendly, save electricity</p><div class="price-indicator">From R8,900</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="our-work" class="section" style="background: #F9FCFC;">
+      <div class="container">
+        <div class="section-title"><span>Our Recent Projects</span></div>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div class="portfolio-image" style="background-image: url('images/bathroom.jpeg');"></div>
+            <div class="portfolio-description">
+              <h4>🚿 Bathroom Renovation</h4>
+              <p>Complete bathroom transformation from outdated to modern luxury. New tiles, modern fixtures, and efficient plumbing layout.</p>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-image" style="background-image: url('images/toilet.jpeg');"></div>
+            <div class="portfolio-description">
+              <h4>🚽 Toilet Installation</h4>
+              <p>Professional toilet installation with water-efficient modern unit. Includes new pan, cistern, and waste pipe connection.</p>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-image" style="background-image: url('images/geyser.jpeg');"></div>
+            <div class="portfolio-description">
+              <h4>⚡ Geyser Installation</h4>
+              <p>New energy-efficient geyser installation with safety valves and proper piping. Reliable hot water guaranteed.</p>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-image" style="background-image: url('images/pipes.jpeg');"></div>
+            <div class="portfolio-description">
+              <h4>🔧 Sink & Water Pipes Replacement</h4>
+              <p>Complete replacement of corroded pipes under kitchen sink. Upgraded to durable copper piping. Eliminated leaks and improved water pressure.</p>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-image" style="background-image: url('images/jojo.jpeg');"></div>
+            <div class="portfolio-description">
+              <h4>💧 JoJo Tank Installation</h4>
+              <p>Complete rainwater harvesting system. 2500L JoJo tank with pressure pump and overflow management for water-saving and backup supply.</p>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-image" style="background-image: url('images/piping.jpg');"></div>
+            <div class="portfolio-description">
+              <h4>🏭 Piping & Drainage System</h4>
+              <p>Professional piping installation for industrial kitchen. High-quality PVC and copper pipes with proper fall gradients and durable connections.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title"><span>Why Choose Us</span></div>
+        <div class="features-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:2rem; text-align:center;">
+          <div class="feature-item" style="background:#F9FCFC; padding:2rem; border-radius:2rem;"><span style="font-size:2.6rem;">⚡🚀</span><h4>Fast Response</h4><p>Same-day service in KwaMashu & surrounds.</p></div>
+          <div class="feature-item" style="background:#F9FCFC; padding:2rem; border-radius:2rem;"><span style="font-size:2.6rem;">💰✅</span><h4>Affordable Pricing</h4><p>Transparent quotes, no hidden fees.</p></div>
+          <div class="feature-item" style="background:#F9FCFC; padding:2rem; border-radius:2rem;"><span style="font-size:2.6rem;">👔🔧</span><h4>Professional Service</h4><p>Certified plumbers, modern tools.</p></div>
+          <div class="feature-item" style="background:#F9FCFC; padding:2rem; border-radius:2rem;"><span style="font-size:2.6rem;">🏆🛡️</span><h4>Certified & Trusted</h4><p>Fully licensed & insured.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding: 3rem 0; background: #F0F7F5;">
+      <div class="container">
+        <div class="section-title"><span>Trusted by Our Community</span></div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card"><p style="font-size:1.5rem;">⭐⭐⭐⭐⭐</p><p>"Makhathini Plumbers saved our weekend emergency. Fast, fair, very clean work."</p><p style="margin-top:1rem; font-weight:bold; color:var(--teal);">— Sindisiwe N.</p></div>
+          <div class="testimonial-card"><p style="font-size:1.5rem;">⭐⭐⭐⭐⭐</p><p>"Installed my new bathroom beautifully. Arrived on time, finished early."</p><p style="margin-top:1rem; font-weight:bold; color:var(--teal);">— Sipho D.</p></div>
+          <div class="testimonial-card"><p style="font-size:1.5rem;">⭐⭐⭐⭐⭐</p><p>"Very professional team. Fixed blocked drains quickly and gave maintenance tips."</p><p style="margin-top:1rem; font-weight:bold; color:var(--teal);">— Lerato M.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding: 2rem 0 4rem 0;">
+      <div class="container">
+        <div class="section-title"><span>Areas We Serve</span></div>
+        <div class="areas-premium">
+          <div class="areas-header">
+            <h3>📍 Covering Durban & Surrounds</h3>
+            <p>Fast, reliable plumbing services across the greater eThekwini region</p>
+          </div>
+          <div class="areas-grid">
+            <div class="area-card"><div class="area-icon">🏠</div><h4>KwaMashu</h4><p>Main hub & headquarters</p></div>
+            <div class="area-card"><div class="area-icon">🌳</div><h4>Phoenix</h4><p>Full residential coverage</p></div>
+            <div class="area-card"><div class="area-icon">🏭</div><h4>Umlazi</h4><p>Industrial & domestic</p></div>
+            <div class="area-card"><div class="area-icon">🏖️</div><h4>Durban North</h4><p>Premium home services</p></div>
+            <div class="area-card"><div class="area-icon">🏘️</div><h4>Ntuzuma</h4><p>Same-day response</p></div>
+            <div class="area-card"><div class="area-icon">🏗️</div><h4>Springfield Park</h4><p>Commercial plumbing</p></div>
+            <div class="area-card"><div class="area-icon">🌊</div><h4>Umhlanga</h4><p>Elite residential</p></div>
+            <div class="area-card"><div class="area-icon">🏞️</div><h4>Pinetown</h4><p>Full coverage area</p></div>
+            <div class="area-card"><div class="area-icon">🚗</div><h4>Chatsworth</h4><p>Rapid response</p></div>
+            <div class="area-card"><div class="area-icon">🏥</div><h4>Mount Edgecombe</h4><p>Premium estates</p></div>
+          </div>
+          <div class="areas-footer"><span>➕ Surrounding areas within 25km radius — just ask!</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-title"><span>Get in Touch</span></div>
+        <div class="contact-row">
+          <div class="contact-info">
+            <h3>📞 Contact Details</h3>
+            <div class="contact-detail"><div class="contact-icon">📍</div><div class="contact-text"><div class="contact-label">ADDRESS</div><div class="contact-value">J 1000 Mthombothi Road, KwaMashu, 4360</div></div></div>
+            <div class="contact-detail"><div class="contact-icon">✉️</div><div class="contact-text"><div class="contact-label">EMAIL US</div><div class="contact-value"><a href="mailto:makhathiniplumbing@gmail.com">makhathiniplumbing@gmail.com</a></div></div></div>
+            <div class="contact-detail"><div class="contact-icon">📞</div><div class="contact-text"><div class="contact-label">CALL US</div><div class="contact-value"><a href="tel:0765969429">076 596 9429</a></div></div></div>
+            <a href="https://wa.me/2765969429?text=Hello%20Makhathini%20Plumbers,%20I%20need%20a%20quote" target="_blank" class="whatsapp-premium-link"> Chat on WhatsApp →</a>
+          </div>
+          <div class="contact-form">
+            <h3 style="margin-bottom: 1rem;">Send a Message</h3>
+            <form id="demoForm">
+              <div class="form-group"><input type="text" id="name" placeholder="Full Name" required></div>
+              <div class="form-group"><input type="tel" id="phone" placeholder="Phone Number" required></div>
+              <div class="form-group"><textarea rows="3" id="message" placeholder="Tell us about your plumbing issue..."></textarea></div>
+              <button type="submit" class="btn-submit">Request Callback</button>
+            </form>
+            <p style="font-size: 0.8rem; margin-top: 1rem; color: #4d716e;">We'll get back to you within 30 minutes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><h3>Makhathini Plumbers (Pty) Ltd</h3><p>Quality plumbing solutions since 2012</p></div>
+      <div><p>📞 076 596 9429</p><p>✉️ makhathiniplumbing@gmail.com</p><p>📍 KwaMashu, Durban</p></div>
+    </div>
+    <div class="designer-credit">Designed by <a href="https://inkspiredigitaldesigns.co.za" target="_blank">Inkspire Digital Designs</a></div>
+    <div class="copyright">© 2026 Makhathini Plumbers (Pty) Ltd — All rights reserved.</div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON WITH OFFICIAL SVG ICON -->
+  <a href="https://wa.me/2765969429?text=Hello%20Makhathini%20Plumbers,%20I%20need%20a%20quote" class="float-wa" target="_blank" rel="noopener noreferrer">
+    <svg class="wa-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C6.48 2 2 6.48 2 12C2 14.13 2.74 16.08 3.95 17.62L2 22L6.45 20.05C7.99 21.26 9.94 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="white"/>
+      <path d="M12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20C10.26 20 8.61 19.44 7.25 18.48L6.5 18L4.5 18.5L5.5 16.75C4.56 15.39 4 13.74 4 12C4 7.58 7.58 4 12 4Z" fill="#25D366"/>
+      <path d="M12 6C8.69 6 6 8.69 6 12C6 13.31 6.38 14.54 7.04 15.61L6.5 18L8.89 17.46C9.93 18.14 11.15 18.5 12.45 18.5C15.76 18.5 18.45 15.81 18.45 12.5C18.45 9.19 15.76 6.5 12.45 6.5H12Z" fill="white"/>
+      <path d="M15.5 14.5C15.2 14.2 14.8 14 14.5 13.8C14.2 13.6 13.9 13.5 13.7 13.8C13.5 14.1 13.2 14.6 13 14.8C12.8 15 12.6 15 12.3 14.8C12 14.6 11.2 14.3 10.3 13.5C9.6 12.9 9.1 12.1 8.9 11.8C8.7 11.5 8.9 11.3 9.1 11.1C9.3 10.9 9.5 10.7 9.7 10.5C9.9 10.3 10 10.1 10.1 9.9C10.2 9.7 10.1 9.5 10 9.3C9.9 9.1 9.4 8.2 9.2 7.8C9 7.4 8.8 7.5 8.6 7.5C8.4 7.5 8.2 7.5 8 7.5C7.8 7.5 7.5 7.6 7.3 7.8C7.1 8 6.6 8.5 6.6 9.2C6.6 9.9 7.1 10.6 7.3 10.9C7.5 11.2 9 13.5 11.4 14.8C12 15.1 12.5 15.2 13 15.3C13.5 15.4 14 15.3 14.5 15.1C15 14.9 15.4 14.6 15.5 14.4C15.6 14.2 15.7 13.9 15.6 13.6C15.5 13.3 15.3 13.1 15 12.9Z" fill="#25D366"/>
+    </svg>
+  </a>
+  
+  <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    // Burger Menu Functionality
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function closeMobileMenu() {
+      burgerBtn.classList.remove('active');
+      mobileNav.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function openMobileMenu() {
+      burgerBtn.classList.add('active');
+      mobileNav.classList.add('active');
+      mobileOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    burgerBtn.addEventListener('click', function() {
+      if (mobileNav.classList.contains('active')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+    
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Contact Form
+    const form = document.getElementById('demoForm');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name')?.value.trim();
+        const phone = document.getElementById('phone')?.value.trim();
+        if (!name || !phone) { alert('⚠️ Please enter your name and phone number.'); return; }
+        alert(`✅ Thank you ${name}! One of our plumbing experts will contact you within 30 minutes.`);
+        form.reset();
+      });
+    }
+
+    // Active Nav Highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .mobile-nav-link');
+    function updateActiveLink() {
+      let scrollPos = window.scrollY + 150;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop, sectionBottom = sectionTop + section.offsetHeight;
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+          const currentId = section.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active-nav');
+            if (link.getAttribute('href') === `#${currentId}`) {
+              link.classList.add('active-nav');
+            }
+          });
+        }
+      });
+    }
+    window.addEventListener('scroll', updateActiveLink);
+    window.addEventListener('load', updateActiveLink);
+  </script>
+</body>
+</html>
